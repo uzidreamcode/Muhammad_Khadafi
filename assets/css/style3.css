@@ -1,0 +1,44 @@
+
+body{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background: url(../img/pos8.jpeg) no-repeat;
+	background-size: cover; 
+}
+
+.login-box{
+	width: 1000px;
+	height: 500px; 
+	position: absolute;
+	background: rgb(0,0,0,.6);
+	padding: 10px 40px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+}
+
+.col-md-2{
+	position: absolute;
+	top: 5%;
+	left: 30%;
+}
+
+.col-md-3{
+	position: absolute;
+	top: 5%;
+	left: 30%;
+}
+
+.login-box h6{
+	position: absolute;
+	top: 90%;
+	left: 40%;
+}
+
+
+.login-box h6 a{
+	font-size: 12px;
+	color: #3660bd;
+}

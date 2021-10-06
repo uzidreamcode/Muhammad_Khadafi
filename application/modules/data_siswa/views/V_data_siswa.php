@@ -30,7 +30,7 @@ foreach ($tampil as $gas) {?>
   <div class="col-md-6">
     <div class="panel">
       <div class="panel-body text-center">
-        <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="img/profile-photos/5.png">
+        <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="<?= base_url(); ?>assets/img/<?= $gas->foto_siswa ?>">
         <p class="text-lg text-semibold mar-no text-main"><?php echo $gas->nama_siswa?></p>
         <p class="text-muted">Web and Graphic designer</p>
         <div class="mar-top">
@@ -71,7 +71,7 @@ foreach ($tampil as $gas) {?>
             </div>
             <div class="form-group col-md-6">
               <label for="inputEmail4">Foto</label>
-              <input name="foto" type="file" class="form-control" id="inputEmail4" placeholder="Email">
+              <input name="gambar" type="file" class="form-control" id="inputEmail4" placeholder="Email">
             </div>
           </div>
 

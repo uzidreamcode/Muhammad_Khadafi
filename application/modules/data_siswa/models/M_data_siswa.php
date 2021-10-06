@@ -62,16 +62,68 @@ class M_data_siswa extends CI_Model {
 		}
 
 	}
+	function edit(){
+		$id_siswa = $this->input->post('id_siswa');
+		$nama_siswa		= $this->input->post('nama_siswa');
+		$nisn	= $this->input->post('nisn');
+		$kelas	= $this->input->post('kelas');
+
+
+
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['gambar']['name'])
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'nama_siswa' => $nama_siswa,
+					'nisn'		 => $nisn,
+					'id_kelas'	 => $kelas,
+					
+					'foto_siswa' => $gbr['file_name'],
+					
+				);
+				$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+
+			}	 
+		}
+		else{
+			$data = array(
+				'nama_siswa'	=> $nama_siswa,
+				'nisn'		    => $nisn,
+				'id_kelas'		=> $kelas,
+			);
+			$this->db->where('id_siswa',$id_siswa)->update('siswa', $data);
+
+		}
+
+	}
+
+	function hapus($id)
+	{
+		$this->db->where('id_siswa', $id)->delete('siswa');
+	}
 
 	public function importData($data) 
 	{
-  
-            $res = $this->db->insert_batch('siswa',$data);
-            if($res){
-                return TRUE;
-            }else{
-                return FALSE;
-            }
-      
-        }
+
+		$res = $this->db->insert_batch('siswa',$data);
+		if($res){
+			return TRUE;
+		}else{
+			return FALSE;
+		}
+
+	}
 }

@@ -20,6 +20,7 @@ class Data_siswa extends MX_Controller {
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'     => $this->m_data_siswa->tampilsiswa(),
 			'tampil_kelas'     => $this->m_data_siswa->tampilkelas(),
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -27,6 +28,15 @@ class Data_siswa extends MX_Controller {
 	// control tambah siswa
 	function tambah(){
 		$this->m_data_siswa->tambah();
+		redirect('data_siswa');
+	}
+	function edit(){
+		$id = $this->input->post('id_siswa');
+		$this->m_data_siswa->edit($id);
+		redirect('data_siswa');
+	}
+	function hapus($id){
+		$this->m_data_siswa->hapus($id);
 		redirect('data_siswa');
 	}
 

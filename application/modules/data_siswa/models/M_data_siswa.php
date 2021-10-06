@@ -5,7 +5,15 @@ class M_data_siswa extends CI_Model {
 
 	function tampilsiswa()
 	{
-		return $this->db->get('siswa')->result();
+		return $this->db->from('siswa')
+		->join('kelas', 'kelas.id_kelas = siswa.id_kelas')
+		->get()
+		->result();
+
+	}
+	function tampilkelas()
+	{
+		return $this->db->get('kelas')->result();
 	}
 	
 	// ini fungsi buat tambah siswa
@@ -26,37 +34,32 @@ class M_data_siswa extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['gambar']['name'])
-        {
-            if ($this->upload->do_upload('gambar'))
-            {
+		{
+			if ($this->upload->do_upload('gambar'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
 					'nama_siswa'			=> $nama_siswa,
 					'nisn'		=> $nisn,
-					'kelas_siswa'		=> $kelas,
+					'id_kelas'		=> $kelas,
 					
 					'foto_siswa' 				=> $gbr['file_name'],
 					
 				);
 				$this->db->insert('siswa', $data);
-			
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nama_siswa'			=> $nama_siswa,
-					'nisn'		=> $nisn,
-					'kelas_siswa'		=> $kelas,
-					
+			$data = array(
+				'nama_siswa'			=> $nama_siswa,
+				'nisn'		=> $nisn,
+				'id_kelas'		=> $kelas,
+				'foto_siswa' 				=> "kosong1.png",
+			);
+			$this->db->insert('siswa', $data);
 
-
-
-
-
-				);
-				$this->db->insert('siswa', $data);
+		}
 
 	}
-    
-}
 }

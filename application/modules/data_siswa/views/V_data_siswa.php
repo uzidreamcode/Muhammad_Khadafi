@@ -32,7 +32,7 @@ foreach ($tampil as $gas) {?>
       <div class="panel-body text-center">
         <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="<?= base_url(); ?>assets/img/<?= $gas->foto_siswa ?>">
         <p class="text-lg text-semibold mar-no text-main"><?php echo $gas->nama_siswa?></p>
-        <p class="text-muted">Web and Graphic designer</p>
+        <p class="text-muted"><?php echo $gas->nama_kelas?></p>
         <div class="mar-top">
           <button class="btn btn-mint">Follow</button>
           <button class="btn btn-mint">Message</button>
@@ -66,7 +66,10 @@ foreach ($tampil as $gas) {?>
               <label for="inputState">Kelas</label>
               <select name="kelas" id="inputState" class="form-control">
                 <option selected>Choose...</option>
-                <option>...</option>
+                <?php
+                foreach ($tampil_kelas as $tkelas) {?>
+                  <option value="<?php echo $tkelas->id_kelas?>"><?php echo $tkelas->nama_kelas?></option>
+                <?php }?>
               </select>
             </div>
             <div class="form-group col-md-6">

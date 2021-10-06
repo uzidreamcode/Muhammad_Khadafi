@@ -18,13 +18,13 @@ class Data_siswa extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
-			'datasiswa'     => $this->m_data_siswa->tampilsiswa(),
+			'tampil'     => $this->m_data_siswa->tampilsiswa(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
 	
 	// control tambah siswa
-	function tambahsiswa(){
+	function tambah(){
 		$this->m_data_siswa->tambah();
 		redirect('data_siswa');
 	}

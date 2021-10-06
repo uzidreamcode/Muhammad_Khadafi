@@ -131,7 +131,7 @@ foreach ($tampil as $gas) {?>
       <div class="modal-body">
         <?= form_open_multipart('data_siswa/tambah'); ?>
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label for="inputEmail4">Nama</label>
             <input type="text" class="form-control" name="nama_siswa" id="inputEmail4" placeholder="NAMA">
           </div>

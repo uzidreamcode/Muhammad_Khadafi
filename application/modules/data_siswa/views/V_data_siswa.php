@@ -3,7 +3,7 @@
   <!--Page Title-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <div id="page-title">
-    <h1 class="page-header text-overflow">Widgets</h1>
+    <h1 style="margin-top: -20px; margin-left: -20px" class="page-header text-overflow">Data Siswa</h1>
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End page title-->
@@ -11,9 +11,9 @@
 
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="demo-pli-home"></i></a></li>
-    <li class="active">Widgets</li>
+  <ol style="margin-bottom: 20px; margin-left: -20px" class="breadcrumb">
+    <li><a href="data_dashboard"><i class="demo-pli-home"></i></a></li>
+    <li class="active">Data Siswa</li>
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
@@ -23,11 +23,14 @@
   <div class="col-sm-6 toolbar-left">
     <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
   </div>
+  <div class="col-sm-6 toolbar-right">
+    <button  data-toggle="modal" data-target="#exampleModal1" class="btn btn-primary">Import</button>
+  </div>
 </div>
 
 <?php
 foreach ($tampil as $gas) {?>
-  <div class="col-md-6">
+  <div class="col-md-4">
     <div class="panel">
       <div class="panel-body text-center">
         <img alt="Profile Picture" class="img-lg img-circle mar-btm" src="<?= base_url(); ?>assets/img/<?= $gas->foto_siswa ?>">
@@ -54,7 +57,7 @@ foreach ($tampil as $gas) {?>
       <div class="modal-body">
           <?= form_open_multipart('data_siswa/tambah'); ?>
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <label for="inputEmail4">Nama</label>
               <input type="text" class="form-control" name="nama_siswa" id="inputEmail4" placeholder="Email">
             </div>
@@ -85,6 +88,27 @@ foreach ($tampil as $gas) {?>
           
 
          <?= form_close(); ?>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="<?php echo site_url('data_siswa/importFile/') ?>" method="post" enctype="multipart/form-data">
+    Upload excel file : 
+    <input type="file" name="uploadFile" value="" /><br><br>
+    <input type="submit" name="submit" value="Upload" />
+    </form>
       </div>
 
     </div>

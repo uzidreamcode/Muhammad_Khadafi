@@ -133,11 +133,11 @@ foreach ($tampil as $gas) {?>
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputEmail4">Nama</label>
-            <input type="text" class="form-control" name="nama_siswa" id="inputEmail4" placeholder="Email">
+            <input type="text" class="form-control" name="nama_siswa" id="inputEmail4" placeholder="NAMA">
           </div>
           <div class="form-group col-md-6">
             <label for="inputPassword4">NISN</label>
-            <input type="text" name="nisn" class="form-control" id="inputPassword4" placeholder="Password">
+            <input type="text" name="nisn" class="form-control" id="inputPassword4" placeholder="NISN">
           </div>
           <div class="form-group col-md-6">
             <label for="inputState">Kelas</label>

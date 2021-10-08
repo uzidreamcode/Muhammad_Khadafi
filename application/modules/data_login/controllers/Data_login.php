@@ -31,5 +31,31 @@ class Data_login extends MX_Controller {
 		}
 	}
 
+	function proses_login()
+	{
+		// POST
+		$getUser = $this->input->post('username');
+		$getPassword = sha1($this->input->post('password'));
+		// Get Data
+		$getData = $this->M_master_userid->getCredential($getUser, $getPassword);
+
+		// check
+		if ( ! empty($getData) )
+		{
+			// masukan ke  dalam session
+			$this->M_session->store_session( $getData->id_admin );
+
+			// flashdata
+			$this->session->set_flashdata('msg', 'greeting');
+
+			redirect('data_sekolah');
+		} else { // gagal login
+
+			$this->session->set_flashdata('msg', 'loginError');
+			redirect('data_login');
+		}
+
+	}
+
 }
 ?>

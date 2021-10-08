@@ -7,22 +7,29 @@ class Data_login extends MX_Controller {
 	{
 		parent::__construct();
 		// model
-		 $this->load->model('m_data_login');
-		 $this->load->model('login/m_session');
+		$this->load->model('M_master_userid');
+
+		$this->load->model('M_session');
 	}
 
 	
 	// index
 	function index()
 	{
-		$data = array(
-			'namamodule' 	=> "data_login",
-			'namafileview' 	=> "V_data_login",
-			'hit_siswa'     => $this->m_data_login->hit_siswa(),
+		if ( empty( $this->session->userdata('session_id') ) )
+		{
+			$data = array (
+				'getCek' => $this->M_session->getCek(),
+				'cekAdmin' => $this->M_master_userid->cekAdmin(),
+				
+			);
+			$this->load->view('v_data_login',$data);
+		} else {
 
-		);
-		echo Modules::run('Template_login/tampilCore', $data);
+			// sudah login
+			redirect('data_guru');
+		}
 	}
-    
+
 }
 ?>

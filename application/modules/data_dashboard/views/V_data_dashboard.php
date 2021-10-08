@@ -16,6 +16,7 @@
                     </a>               
                 </div>
                 <div class="col-md-6">
+                  <a href="<?php echo base_url('data_login'); ?>">
                    <div class="panel panel-info panel-colorful media middle pad-all">
                        <div class="media-left">
                            <div class="pad-hor">

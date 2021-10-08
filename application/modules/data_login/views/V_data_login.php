@@ -90,7 +90,7 @@
                         <h1 class="h3">Account Login</h1>
                         <p>Sign In to your account</p>
                     </div>
-                    <form action="<?php echo base_url('data_login/proses_login' ) ?>">
+                    <form  method="post" action="<?php echo base_url('data_login/proses_login' ) ?>">
                         <div class="form-group">
                             <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
                         </div>

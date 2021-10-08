@@ -10,6 +10,7 @@ class Data_login extends MX_Controller {
 		$this->load->model('M_master_userid');
 
 		$this->load->model('M_session');
+		 $this->load->model('m_data_login');
 	}
 
 	
@@ -48,7 +49,7 @@ class Data_login extends MX_Controller {
 			// flashdata
 			$this->session->set_flashdata('msg', 'greeting');
 
-			redirect('data_sekolah');
+			redirect('data_guru');
 		} else { // gagal login
 
 			$this->session->set_flashdata('msg', 'loginError');

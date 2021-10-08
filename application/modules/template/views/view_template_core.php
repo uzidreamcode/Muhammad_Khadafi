@@ -526,6 +526,25 @@
 
                                  
                                 <ul id="mainnav-menu" class="list-group">
+                                    <?php if($this->uri->segment('1') == 'data_dashboard'){ ?>
+                                    <li class="active-sub">
+                                        <a href="<?php echo base_url('data_dashboard'); ?>">
+                                            <i class="fa fa-list"></i>
+                                            <span class="menu-title">data_dashboard</span>
+                                            <i class="arrow"></i>
+                                        </a>
+                                        <!--Submenu-->
+                                    </li>
+                                    <?php } else{ ?>
+                                        <li>
+                                        <a href="<?php echo base_url('data_dashboard'); ?>">
+                                            <i class="fa fa-list"></i>
+                                            <span class="menu-title">data_dashboard</span>
+                                            <i class="arrow"></i>
+                                        </a>
+                                        <!--Submenu-->
+                                    </li>
+                                    <?php } ?>
               
                                     <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
                                     <li class="active-sub">

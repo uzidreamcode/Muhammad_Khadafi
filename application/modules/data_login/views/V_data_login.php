@@ -90,12 +90,12 @@
                         <h1 class="h3">Account Login</h1>
                         <p>Sign In to your account</p>
                     </div>
-                    <form action="index.html">
+                    <form action="<?php echo base_url('data_login/proses_login' ) ?>">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Username" autofocus>
+                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                         <div class="checkbox pad-btm text-left">
                             <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox">

@@ -597,7 +597,7 @@
                                     </li>
                                     <?php } else{ ?>
                                         <li>
-                                        <a href="<?php echo base_url('data_guru'); ?>">
+                                        <a href="<?php echo base_url('data_login'); ?>">
                                             <i class="fa fa-list"></i>
                                             <span class="menu-title">Data Guru</span>
                                             <i class="arrow"></i>

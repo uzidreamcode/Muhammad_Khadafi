@@ -28,6 +28,7 @@
                            <p class="mar-no">Guru</p>
                        </div>
                    </div>
-               </div>
+               
+                  </a>
+                </div>
            </div>
-       

@@ -21,10 +21,10 @@
 </div>
 <div class="row pad-btm">
   <div class="col-sm-6 toolbar-left">
-    <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-purple">tambah</button>
+    <button  data-toggle="modal" data-target="#exampleModal" class="btn btn-success btn-sm"><span class="fa fa-plus"></span> Tambah</button>
   </div>
   <div class="col-sm-6 toolbar-right">
-    <button  data-toggle="modal" data-target="#exampleModal1" class="btn btn-primary">Import</button>
+    <button  data-toggle="modal" data-target="#exampleModal1" class="btn btn-success btn-sm"><span class="fa fa-plus"></span> Import</button>
   </div>
 </div>
 

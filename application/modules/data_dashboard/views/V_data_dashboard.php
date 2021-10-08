@@ -9,7 +9,7 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <p class="text-2x mar-no text-semibold">241</p>
+                                <p class="text-2x mar-no text-semibold"><?php echo $hit_siswa?></p>
                                 <p class="mar-no">Siswa</p>
                             </div>
                         </div>

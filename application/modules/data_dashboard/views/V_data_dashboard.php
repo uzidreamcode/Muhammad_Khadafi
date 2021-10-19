@@ -1,7 +1,7 @@
 
                <div class="row">
                    <div class="col-md-6">
-                    <a href="tables-static.html">
+                    <a href="data_siswa">
                         <div class="panel panel-warning panel-colorful media middle pad-all">
                             <div class="media-left">
                                 <div class="pad-hor">

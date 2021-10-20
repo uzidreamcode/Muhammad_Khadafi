@@ -28,7 +28,7 @@ class Data_login extends MX_Controller {
 		} else {
 
 			// sudah login
-			redirect('data_guru');
+			redirect('data_siswa');
 		}
 	}
 
@@ -49,7 +49,7 @@ class Data_login extends MX_Controller {
 			// flashdata
 			$this->session->set_flashdata('msg', 'greeting');
 
-			redirect('data_guru');
+			redirect('data_siswa');
 		} else { // gagal login
 
 			$this->session->set_flashdata('msg', 'loginError');
